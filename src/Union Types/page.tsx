@@ -9,11 +9,9 @@ type ContactProps = {
     email: string;
 }
 
-
 type AddressProps = {
     city: string;
-    //Union Type
-    zipCode: string | number;
+    zipCode: string;
 }
 
 // Interface seria extends
@@ -33,7 +31,19 @@ export default function TypePage() {
         email: "email",
         name: "Vitor Hugo",
         phone: "999999999",
-        zipCode: 23123123
+        zipCode: "23123123"
+    })
+
+    const handleSaveCustomOr = (customer: CustomerOrProps) => {
+        console.log(customer);
+    }
+
+    handleSaveCustomOr({
+        name: "Vitor Hugo",
+        doc: "123",
+        age: 30,
+        email: "email",
+        phone: "999999999",
     })
 
     return (
