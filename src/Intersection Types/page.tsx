@@ -1,3 +1,5 @@
+import React from "react";
+
 type PersonProps = {
     name:string;
     doc: string;
