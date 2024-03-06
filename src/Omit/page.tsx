@@ -6,16 +6,24 @@ type PersonProps = {
     age: number;
 }
 
-type PersoWithoutDocProps = Omit<PersonProps, 'doc'>
+type ContactProps = {
+    phone: string;
+    email: string;
+}
+
+function exampleFunction<T>(args: T): T {
+    console.log('args', args);
+    return args;
+}
+type DocumentProps = Pick<PersonProps, 'doc'>
 
 export default function TypePage() {
-    const handleSaveDocument = (customer: PersoWithoutDocProps) => {
+    const handleSaveDocument = (customer: DocumentProps) => {
         console.log(customer);
     }
 
     handleSaveDocument({
-        name: "Vitor Hugo",
-        age: 30,
+        doc: "123",
     })
 
     return (
