@@ -1,22 +1,16 @@
 import React from "react";
 
-type PersonProps = {
-    name:string;
-    doc: string;
-    age: number;
-}
-
-type PersoWithoutDocProps = Omit<PersonProps, 'doc'>
-
 export default function TypePage() {
-    const handleSaveDocument = (customer: PersoWithoutDocProps) => {
-        console.log(customer);
+    function double(a: number | undefined) {
+        if(typeof a === "number") {
+            return `Resultado = ${a * 2}`;
+        }
+
+        throw new Error(`Erro: não foi possível calcular o dobro de ${a}`)
     }
 
-    handleSaveDocument({
-        name: "Vitor Hugo",
-        age: 30,
-    })
+    double(2);
+    double(undefined);
 
     return (
         <div>
